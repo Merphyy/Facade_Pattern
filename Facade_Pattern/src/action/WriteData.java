@@ -3,10 +3,9 @@ import java.io.File;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-
 import documentAPI.Document;
+
 
 public class WriteData extends Document {
 
@@ -24,7 +23,6 @@ public class WriteData extends Document {
 	}
 	@Override
 	public void description() {
-		// TODO Auto-generated method stub
 		System.out.println("This is the writing progress");
 	}
 
@@ -39,31 +37,18 @@ public class WriteData extends Document {
 				content.append(programData.get(i)).append('\n');
 			}
 			fileOutputStream.write(content.toString().getBytes());
+			System.out.println("Value written : "+content.toString());
 			fileOutputStream.close();
 
 		}catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-
 		}
 	}
 
 
-
 	@Override
 	public List<String> load() {
+		System.out.println("Function not implemented");
 		return null;
 	}
-
-	/*public static void demo() {
-		WriteData obj = new WriteData("abc.txt");
-		List<String> list = new ArrayList<>();
-		list.add("123454");
-		list.add("123454");
-		list.add("123454");
-
-		obj.save(list);
-	}*/
-
-
 }
